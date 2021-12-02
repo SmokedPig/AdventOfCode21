@@ -11,7 +11,7 @@ namespace AdventOfCode
         {
             int counter = 0;
 
-            var path = @"C:\Users\Martin\Code\AdventOfCode\1\input2.txt";
+            var path = @"C:\Users\Martin\Code\AdventOfCode\1\input.txt";
 
             var lines = File.ReadAllLines(path, Encoding.UTF8);
             for(var i=0;i<lines.Length;i++) {
