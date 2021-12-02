@@ -9,11 +9,11 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            // Solver_1.Part1();
-            // Solver_1.Part2();
+            Solver_1.Part1();
+            Solver_1.Part2();
 
-            // Solver_2.Part1();
-            // Solver_2.Part2();
+            Solver_2.Part1();
+            Solver_2.Part2();
         }
     }
 }

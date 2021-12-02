@@ -7,11 +7,10 @@ namespace AdventOfCode
 {
     public static class Solver_2
     {
+        static private string path = @"2\input.txt";
         public static void Part1()
         {
-            var path = @"C:\Users\Martin\Code\AdventOfCode\2\input.txt";
-
-            int hoz = 0;
+            int pos = 0;
             int depth = 0;
 
             foreach(var line in File.ReadAllLines(path, Encoding.UTF8)) {
@@ -19,7 +18,7 @@ namespace AdventOfCode
                 switch(split[0])
                 {
                     case "forward":
-                        hoz = hoz + int.Parse(split[1]);
+                        pos = pos + int.Parse(split[1]);
                     break;
                     case "down":
                         depth = depth + int.Parse(split[1]);
@@ -30,17 +29,15 @@ namespace AdventOfCode
                 }
             }
 
-            Console.WriteLine("Done Part1");
-            Console.WriteLine($"Hoz: {hoz}");
+            Console.WriteLine($"Pos: {pos}");
             Console.WriteLine($"Depth: {depth}");
-            Console.WriteLine($"Result (Hoz * Depth): {hoz*depth}");
+            Console.WriteLine($"Result (Pos * Depth): {pos*depth}");
+            Console.WriteLine("Done Part1"+System.Environment.NewLine);
         }
 
         public static void Part2()
         {
-            var path = @"C:\Users\Martin\Code\AdventOfCode\2\input.txt";
-
-            int hoz = 0;
+            int pos = 0;
             int depth = 0;
             int aim = 0;
 
@@ -50,22 +47,23 @@ namespace AdventOfCode
                 switch(split[0])
                 {
                     case "forward":
-                        hoz = hoz + parsed;
+                        pos += parsed;
                         depth += aim * parsed;
                     break;
                     case "down":
-                        aim = aim + parsed;
+                        aim += parsed;
                     break;
                     case "up":
-                        aim = aim - parsed;
+                        aim -= parsed;
                     break;
                 }
             }
 
-            Console.WriteLine("Done Part1");
-            Console.WriteLine($"Hoz: {hoz}");
+            Console.WriteLine($"Pos: {pos}");
             Console.WriteLine($"Depth: {depth}");
-            Console.WriteLine($"Result (Hoz * Depth): {hoz*depth}");
+            Console.WriteLine($"Aim: {aim}");
+            Console.WriteLine($"Result (Pos * Depth): {pos*depth}");
+            Console.WriteLine("Done Part2"+System.Environment.NewLine);
         }
     }
 }

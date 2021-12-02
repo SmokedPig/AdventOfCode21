@@ -7,11 +7,10 @@ namespace AdventOfCode
 {
     public static class Solver_1
     {
+        static private string path = @"1\input.txt";
         public static void Part1()
         {
             int counter = 0;
-
-            var path = @"C:\Users\Martin\Code\AdventOfCode\1\input.txt";
 
             var lines = File.ReadAllLines(path, Encoding.UTF8);
             for(var i=0;i<lines.Length;i++) {
@@ -21,15 +20,14 @@ namespace AdventOfCode
                     counter++;
                 }
             }
-            Console.WriteLine("Done Part1");
+            
             Console.WriteLine(counter);
+            Console.WriteLine("Done Part1"+System.Environment.NewLine);
         }
 
         public static void Part2()
         {
             int counter = 0;
-
-            var path = @"C:\Users\Martin\Code\AdventOfCode\1\input.txt";
 
             int? oldValue = null;
             foreach(var line in File.ReadAllLines(path, Encoding.UTF8)) {
@@ -39,8 +37,8 @@ namespace AdventOfCode
                 }
                 oldValue = currentValue;
             }
-            Console.WriteLine("Done Part2");
             Console.WriteLine(counter);
+            Console.WriteLine("Done Part2"+System.Environment.NewLine);
         }
     }
 }
